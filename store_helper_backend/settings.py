@@ -42,10 +42,11 @@ INSTALLED_APPS = [
     # external
     'corsheaders',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
     'ckeditor',
     'ckeditor_uploader',
     # apps
+    'products',
 ]
 
 MIDDLEWARE = [
