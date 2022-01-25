@@ -42,10 +42,9 @@ INSTALLED_APPS = [
     # external
     'corsheaders',
     'rest_framework',
-    'rest_framework.authtoken'
-    'ckeditor',
-    'ckeditor_uploader',
+    'rest_framework.authtoken',
     # apps
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -133,8 +132,6 @@ else:
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
-
-CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
