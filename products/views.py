@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-# Create your views here.
+from . import models, serializers
+
+
+class ProductViewSet(ModelViewSet):
+    queryset = models.Product.objects.all()
+    serializer_class = serializers.ProductSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]

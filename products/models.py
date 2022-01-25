@@ -8,7 +8,12 @@ class Product(models.Model):
     """
     name = models.CharField("Name", max_length=150)
     description = models.TextField("Description")
-    price = models.DecimalField("Price", validators=[MinValueValidator(0.01)])
+    price = models.DecimalField(
+        "Price", 
+        decimal_places=2, 
+        max_digits=9, 
+        validators=[MinValueValidator(0.01)]
+    )
     image = models.ImageField("Image", upload_to="products")
 
     def __str__(self):
