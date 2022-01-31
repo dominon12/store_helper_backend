@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework.authentication import TokenAuthentication
 
-# Create your views here.
+from . import serializers
+
+
+class UserDetail(APIView):
+    authentication_classes = [TokenAuthentication]
+
+    def get(self, request):
+        user = request.user
+        serializer = serializers.UserSerializer(instance=user)
+        return Response(serializer.data)
